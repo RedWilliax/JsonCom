@@ -5,8 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Reference Include="UnityEditor">
+      <HintPath>..\..\..\..\Program Files\App\2019.3.12f1\Editor\Data\Managed\UnityEditor.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine">
-      <HintPath>D:\Applications\2019.3.2f1\Editor\Data\Managed\UnityEngine.dll</HintPath>
+      <HintPath>..\..\..\..\Program Files\App\2019.3.12f1\Editor\Data\Managed\UnityEngine.dll</HintPath>
     </Reference>
   </ItemGroup>
 
