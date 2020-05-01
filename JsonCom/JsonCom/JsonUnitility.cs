@@ -11,18 +11,29 @@ namespace JsonCom
         public static string CreateJson<T>(T _object) => JsonUtility.ToJson(_object);
         public static T CreateObject<T>(string _Json) => JsonUtility.FromJson<T>(_Json);
 
-        public static bool CheckDirectory(string directoryPath)
+        public static bool CheckDirectory(string _directoryPath)
         {
-            if (!Directory.Exists(directoryPath))
-                Directory.CreateDirectory(directoryPath);
+            if (!Directory.Exists(_directoryPath))
+                Directory.CreateDirectory(_directoryPath);
 
-            return Directory.Exists(directoryPath);
+            return Directory.Exists(_directoryPath);
         }
 
         public static bool CheckFile<T>(string _filePath)
         {
             if (!File.Exists(_filePath))
                 File.WriteAllText(_filePath, CreateJson(default(T)));
+
+            return File.Exists(_filePath);
+        }
+
+        public static bool CheckFile(string _filePath)
+        {
+            if (!File.Exists(_filePath))
+            {
+                File.WriteAllText(_filePath, "");
+                Debug.Log("We created a new file empty, It's expected ?");
+            }
 
             return File.Exists(_filePath);
         }
@@ -48,13 +59,26 @@ namespace JsonCom
             _object = CreateObject<T>(File.ReadAllText(_filePath));
         }
 
-        public static void ReadJson<T>(ref T _object, string _filePath, string directoryPath)
+        public static void ReadJson<T>(ref T _object, string _filePath, string _directoryPath)
         {
-            CheckDirectory(directoryPath);
+            CheckDirectory(_directoryPath);
 
             ReadJson(ref _object, _filePath);
         }
 
+        public static string GetJson(string _filePath)
+        {
+            CheckFile(_filePath);
+
+            return File.ReadAllText(_filePath);
+        }
+
+        public static string GetJson(string _filePath, string _directoryPath)
+        {
+            CheckDirectory(_directoryPath);
+
+            return GetJson(_filePath);
+        }
 
     }
 }
