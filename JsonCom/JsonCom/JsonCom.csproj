@@ -6,10 +6,10 @@
 
   <ItemGroup>
     <Reference Include="UnityEditor">
-      <HintPath>..\..\..\..\Program Files\App\2019.3.12f1\Editor\Data\Managed\UnityEditor.dll</HintPath>
+      <HintPath>..\..\..\..\Program Files\App\2020.3.0f1\Editor\Data\Managed\UnityEditor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
-      <HintPath>..\..\..\..\Program Files\App\2019.3.12f1\Editor\Data\Managed\UnityEngine.dll</HintPath>
+      <HintPath>..\..\..\..\Program Files\App\2020.3.0f1\Editor\Data\Managed\UnityEngine.dll</HintPath>
     </Reference>
   </ItemGroup>
 
